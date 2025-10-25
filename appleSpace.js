@@ -6,13 +6,13 @@ const nameBar = document.getElementById('memberName');
 
 // Map each member to a consistent image
 const imageMap = {
-  sobrepena: 'appleSpace/avatar.png',
+  sobrepena: 'appleSpace/Sobrepeña.png',
   adan: 'appleSpace/Adan.png',
   talento: 'appleSpace/Talento.png',
   criss: 'appleSpace/Criss.png',
   benagua: 'appleSpace/Benagua.png',
   vida: 'appleSpace/Vida.png',
-  gutierrez: 'https://picsum.photos/id/1020/300/300'
+  gutierrez: 'appleSpace/Gutierrez.png'
 };
 
 // Map each member to their display name
