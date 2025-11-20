@@ -7,305 +7,338 @@
 
   <link rel="stylesheet" href="./appleSpace.css" />   <!-- Css -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- Tailwindcss CDN -->
-  <script src="./appleSpace.js" defer></script> <!-- Javascript -->
 
 </head>
 <body>
 
   <!-- Background video -->
-  <video
+ <video
+    class="bg-video"
     autoplay muted loop playsinline
     poster="./appleSpace/waveBg-poster.jpg"
-    class="bg-video"
-    src="./appleSpace/waveBg.mp4"
     aria-hidden="true"
-  >Your browser does not support the video tag.</video>
+  >
+    <source src="./appleSpace/waveBg.mp4" type="video/mp4">
+    <!-- fallback image shown if video can't play -->
+    <img src="./appleSpace/waveBg-poster.jpg" alt="Background poster" style="width:100%;height:100%;object-fit:cover;">
+  </video>
+
+  <h1 class="pageTitle text-center">Welcome to Apple Space</h1>
 
   <!-- Content Wrapper -->
-  <main class="w-[100vw] h-[100vh] flex flex-col items-center text-center">
-    <header class="w-full mx-auto mt-8">
-        <h1 class="text-[4rem] font-extrabold leading-tight drop-shadow-lg">
-          Welcome to Apple Space
-        </h1>
-    </header>
+  <main class="text-center" role="region" aria-label="profile Card">
 
-    <!-- Frame -->
-    <div class="frame">
-      <img src="./appleSpace/frame1.png" alt="design frame" class="contrast-250 opacity-60 w-full" />
+    <!--- SOBREPEÑA --->
+    <section id="frame1" class="frame1" aria-label="Profile John Rey C. Sobrepeña">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">John Rey C. Sobrepeña</h2>
 
-      <!-- Profile image card -->
-      <div
-        class="overlay absolute w-[20.9%] h-[40.9%] left-[6.7%] top-[13.7%]"
-        aria-hidden="false"
-      >
-        <img id="profileImage" src="./appleSpace/Sobrepeña.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out" />
+        <div class="overlay absolute w-[21%] left-[6.7%] top-0" aria-hidden="false">
+          <img id="profileImage" src="./appleSpace/Sobrepeña.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-2xl" />
+        </div>
 
-      </div>
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[30%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+                <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank">Facebook</a></li>
+                <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank">Youtube</a></li>
+                <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank">Bilibili</a></li>
+                <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank">Spotify</a></li>
+              </ul>
+            </div>
+          </div>
 
-      <!-- Name bar -->
-      <div
-        class="overlay absolute top-[10%] right-[2.5%] w-[56.8%] h-[6.5%] flex"
-        aria-hidden="true"
-      >
-       <div class="nameBar absolute w-full text-[1.8rem] font-semibold text-center" >
-         <h1 id="memberName">John Rey C. Sobrepeña</h1>
-       </div>
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Hello, I'm an Aspiring Full-Stack Developer who also likes Designing.</p>
+              <h3>Hobbies:</h3>
+              <ul class="space-y-1">
+                <li>Reading Manhua/Manhwa</li>
+                <li>Watching Movies/Series</li>
+                <li>Drawing / Digital Art </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
+        <!-- arrows -->
+        <a class="nav prev" href="#frame7" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame2" aria-label="Next">›</a>
       </div>
-
-      <!-- Profile card -->
-
-    <section>
-                                             <!-- Sobrepeña -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%]" id="sobrepena">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank"> Facebook</a></li>
-               <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank"> Youtube</a></li>
-               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank"> Bilibili</a></li>
-               <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank"> Spotify</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>Reading Manhua/Manhwa</li>
-              <li>Watching Movies/Series</li>
-          </div>
-        </div>
-      </div>
-                                             <!-- Adan -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%] hidden" id="adan">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank"> Facebook</a></li>
-               <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank"> Youtube</a></li>
-               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank"> Bilibili</a></li>
-               <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank"> Spotify</a></li>
-               <li><a href="https://www.aniwatch.com" class="hover:text-emerald-400" target="_blank"> Aniwatch</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>watching videos and Anime</li>
-              <li>Playin Games</li>
-          </div>
-        </div>
-      </div>
-                                             <!-- Talento -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%] hidden" id="talento">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank"> Facebook</a></li>
-               <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank"> Youtube</a></li>
-               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank"> Bilibili</a></li>
-               <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank"> Spotify</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>Playing Guitar</li>
-              <li>Online Games</li>
-          </div>
-        </div>
-      </div>
-                                             <!-- Criss -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%] hidden" id="criss">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank"> facebook</a></li>
-               <li><a href="https://www.tiktok.com" class="hover:text-emerald-400" target="_blank"> Tiktok</a></li>
-               <li><a href="https://www.instagram.com" class="hover:text-emerald-400" target="_blank"> Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>Working Out</li>
-              <li>Reading Books</li>
-              <li>Watching Movies</li>
-          </div>
-        </div>
-      </div>
-                                             <!-- Benagua -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%] hidden" id="benagua">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.y8.com" class="hover:text-emerald-400" target="_blank"> Y8 Games</a></li>            
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>Mag Yearn</li>
-          </div>
-        </div>
-      </div>
-                                             <!-- Vida -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%] hidden" id="vida">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank"> Facebook</a></li>
-               <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank"> Youtube</a></li>
-               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank"> Bilibili</a></li>
-               <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank"> Spotify</a></li>
-               <li><a href="https://www.aniwatch.com" class="hover:text-emerald-400" target="_blank"> Aniwatch</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>Watching videos and Anime</li>
-              <li>Playing Games</li>
-          </div>
-        </div>
-      </div>
-                                             <!-- Gutierrez -->
-      <div class="profile-card absolute w-[60%] h-[40%] grid grid-cols-2 left-[31%] top-[22%] hidden" id="gutierrez">
-        <div class="containerLeft overlay w-[40%] h-full overflow-hidden left-0 text-left">
-          <div class="pb-2 text-[.8rem]">
-            <h1> Favorites</h1>
-            <ul class="px-4">
-               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank"> Bilibili</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="containerRight overlay w-[63%] h-[100%] p-2 overflow-hidden right-0">
-          <div>
-            <p>
-              Hello, we are from the Polytechnic University and we're passionate about tech and innovation.
-            </p>
-            <h1>
-              Hobbies:
-            </h1>
-            <ul>
-              <li>Puzzle Games</li>
-              <li>Reading</li>
-          </div>
-        </div>
-      </div>
-
     </section>
 
-      <!-- Team members panel -->
-      <section class="absolute flex left-1.5 bottom-[10.3%] w-[100%] h-[22%]">
-        <div class="flex items-center mb-3">
-          <p class="text-lg pt-1.5 font-bold tracking-wider text-emerald-50/90 [writing-mode:vertical-rl]">Members</p>
+    <!--- ADAN --->
+    <section id="frame2" class="frame2" aria-label="Profile Adan">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">Adan</h2>
+
+        <div class="overlay absolute w-[20.5%] h-[40.9%] left-[6.7%] top-0" aria-hidden="false">
+          <img id="profileImage2" src="./appleSpace/Sobrepeña.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-2xl" />
         </div>
 
-        <div class="flex-1 flex h-full justify-center my-[.3rem]">
-          <div class="grid grid-cols-7 gap-4 w-[95%] h-full">
-            <!-- Member Cards -->
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="sobrepena">
-              <span class="text-2xl text-emerald-50/80 ">Sobrepeña</span>
-              <div class="w-full aspect-square rounded-5xl overflow-hidden shadow-inner">
-                <img src="./appleSpace/Sobrepeña.png" alt="Team member 1" class="w-full h-full px-0.5 pb-0.5 object-fit">
-              </div>
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[30%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+                <li><a href="https://www.github.com" class="hover:text-emerald-400" target="_blank">GitHub</a></li>
+                <li><a href="https://www.twitter.com" class="hover:text-emerald-400" target="_blank">Twitter</a></li>
+                <li><a href="https://www.reddit.com" class="hover:text-emerald-400" target="_blank">Reddit</a></li>
+                <li><a href="https://www.discord.com" class="hover:text-emerald-400" target="_blank">Discord</a></li>
+              </ul>
             </div>
+          </div>
 
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="adan">
-              <span class="text-2xl text-emerald-50/80 ">Adan</span>
-              <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-                <img src="./appleSpace/Adan.png" alt="Team member 2" class="w-full h-full pb-0.5 object-fit">
-              </div>
-            </div>
-
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="talento">
-              <span class="text-2xl text-emerald-50/80 ">Talento</span>
-              <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-                <img src="./appleSpace/Talento.png" alt="Team member 3" class="w-full h-full pb-0.5 object-fit">
-              </div>
-            </div>
-
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="criss">
-              <span class="text-2xl text-emerald-50/80 ">Criss</span>
-              <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-                <img src="./appleSpace/Criss.png" alt="Team member 4" class="w-full h-full pb-0.5 object-fit">
-              </div>
-            </div>
-
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="benagua">
-              <span class="text-2xl text-emerald-50/80 ">Benagua</span>
-              <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-                <img src="./appleSpace/Benagua.png" alt="Team member 5" class="w-full h-full pb-0.5 object-fit">
-              </div>
-            </div>
-
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="vida">
-              <span class="text-2xl text-emerald-50/80 ">Vida</span>
-              <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-                <img src="./appleSpace/Vida.png" alt="Team member 6" class="w-full h-full pb-0.5 object-fit">
-              </div>
-            </div>
-
-            <div class="member-card overlay flex flex-col h-[80%] items-center" data-member="gutierrez">
-              <span class="text-2xl text-emerald-50/80 ">Gutierrez</span>
-              <div class="w-full aspect-square rounded-50 overflow-hidden shadow-inner">
-                <img src="./appleSpace/Gutierrez.png" alt="Team member 7" class="w-full h-full pb-0.5 object-fit">
-              </div>
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Tech enthusiast and creative problem solver from Polytechnic University.</p>
+              <h3>Hobbies:</h3>
+              <ul class="space-y-1">
+                <li>Coding</li>
+                <li>Playing Guitar</li>
+                <li>Singing</li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
 
-    </div>
+        <a class="nav prev" href="#frame1" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame3" aria-label="Next">›</a>
+      </div>
+    </section>
+
+    <!--- TALENTO --->
+    <section id="frame3" class="frame3" aria-label="Profile Talento">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">Christian Talento</h2>
+
+        <div class="overlay absolute w-[21%] left-[6.7%] top-7" aria-hidden="false">
+          <img id="profileImage3" src="./appleSpace/Talento.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-[2em]" />
+        </div>
+
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[30%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+                <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank">Facebook</a></li>
+                <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank">Youtube</a></li>
+                <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank">Bilibili</a></li>
+                <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank">Spotify</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Designer and developer passionate about creating beautiful user experiences.</p>
+              <h3>Hobbies:</h3>
+              <ul>
+                <li>Playing Guitar</li>
+                <li>Online Games</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav prev" href="#frame2" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame4" aria-label="Next">›</a>
+      </div>
+    </section>
+
+    <!--- CRISS --->
+    <section id="frame4" class="frame4" aria-label="Profile Criss">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">Juan Miguel Criss</h2>
+
+        <div class="overlay absolute w-[15%] left-[9%] top-10" aria-hidden="false">
+          <img id="profileImage4" src="./appleSpace/Criss.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-2xl" />
+        </div>
+
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[30%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank">Facebook</a></li>
+               <li><a href="https://www.tiktok.com" class="hover:text-emerald-400" target="_blank">Tiktok</a></li>
+               <li><a href="https://www.instagram.com" class="hover:text-emerald-400" target="_blank">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Content creator and storyteller with a passion for multimedia.</p>
+              <h3>Hobbies:</h3>
+              <ul class="space-y-1">
+                <li>Working Out</li>
+                <li>Reading Books</li>
+                <li>Watching Movies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav prev" href="#frame3" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame5" aria-label="Next">›</a>
+      </div>
+    </section>
+
+    <!--- BENAGUA --->
+    <section id="frame5" class="frame5" aria-label="Profile Benagua">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">Earl James Benagua</h2>
+
+        <div class="overlay absolute w-[20%] left-[7.2%] top-5" aria-hidden="false">
+          <img id="profileImage5" src="./appleSpace/Benagua.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-2xl" />
+        </div>
+
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[31%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+               <li><a href="https://www.y8.com" class="hover:text-emerald-400" target="_blank">Y8 Games</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Software engineer focused on building scalable applications.</p>
+              <h3>Hobbies:</h3>
+              <ul class="space-y-1">
+                <li>Mag Yearn</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav prev" href="#frame4" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame6" aria-label="Next">›</a>
+      </div>
+    </section>
+
+    <!--- VIDA --->
+    <section id="frame6" class="frame6" aria-label="Profile Vida">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">Sept CJ Vida</h2>
+
+        <div class="overlay absolute w-[21%] left-[6.8%] top-0" aria-hidden="false">
+          <img id="profileImage6" src="./appleSpace/Vida.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-2xl" />
+        </div>
+
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[30%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+               <li><a href="https://www.facebook.com" class="hover:text-emerald-400" target="_blank">Facebook</a></li>
+               <li><a href="https://www.youtube.com" class="hover:text-emerald-400" target="_blank">Youtube</a></li>
+               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank">Bilibili</a></li>
+               <li><a href="https://www.spotify.com" class="hover:text-emerald-400" target="_blank">Spotify</a></li>
+               <li><a href="https://www.aniwatch.com" class="hover:text-emerald-400" target="_blank">Aniwatch</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Project manager and organizer who loves bringing ideas to life.</p>
+              <h3>Hobbies:</h3>
+              <ul class="space-y-1">
+                <li>Watching videos and Anime</li>
+                <li>Playing Games</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav prev" href="#frame5" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame7" aria-label="Next">›</a>
+      </div>
+    </section>
+
+    <!--- GUTIERREZ --->
+    <section id="frame7" class="frame7" aria-label="Profile Gutierrez">
+      <div class="frame-inner">
+        <img src="./appleSpace/frame1.png" alt="design frame" class="frame-img" />
+        <h2 class="section-title text-2xl">Dharl Akhen Gutierrez</h2>
+
+        <div class="overlay absolute w-[20%] left-[7.2%] top-4" aria-hidden="false">
+          <img id="profileImage7" src="./appleSpace/Gutierrez.png" alt="profileImg" class="profileImg transition-opacity duration-100 ease-in-out rounded-b-3xl" />
+        </div>
+
+        <div class="absolute w-[60%] h-[50%] grid grid-cols-2 left-[30%] top-[15%]">
+          <div class="containerLeft w-[40%] h-full left-2 text-left">
+            <div class="pb-2 text-[.8rem]">
+              <h3>Favorites</h3>
+              <ul class="px-4">
+               <li><a href="https://www.bilibili.com" class="hover:text-emerald-400" target="_blank">Bilibili</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="containerRight w-[63%] h-[100%] p-2 right-[-0.7rem]">
+            <div>
+              <p class="text-sm mb-3">Creative designer with an eye for detail and aesthetics.</p>
+              <h3>Hobbies:</h3>
+              <ul class="space-y-1">
+                <li>Puzzle Games</li>
+                <li>Reading</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <a class="nav prev" href="#frame6" aria-label="Previous">‹</a>
+        <a class="nav next" href="#frame1" aria-label="Next">›</a>
+      </div>
+    </section>
+
   </main>
+
+  <!-- profileImg navigation -->
+  <nav class="dots" aria-label="Carousel controls — jump to profile">
+    <a class="dot" href="#frame1" aria-label="Show John Rey">
+      <img src="./appleSpace/Sobrepeña.png" alt="John Rey profileImg"/>
+      <span class="dot-name">Sobrepeña</span>
+    </a>
+    <a class="dot" href="#frame2" aria-label="Show Adan">
+      <img src="./appleSpace/Sobrepeña.png" alt="Adan profileImg"/>
+      <span class="dot-name">Adan</span>
+    </a>
+    <a class="dot" href="#frame3" aria-label="Show Talento">
+      <img src="./appleSpace/Talento.png" alt="Christian Talento profileImg"/>
+      <span class="dot-name">Talento</span>
+    </a>
+    <a class="dot" href="#frame4" aria-label="Show Criss">
+      <img src="./appleSpace/Criss.png" alt="Juan Miguel Criss profileImg"/>
+      <span class="dot-name">Criss</span>
+    </a>
+    <a class="dot" href="#frame5" aria-label="Show Benagua">
+      <img src="./appleSpace/Benagua.png" alt="Earl James Benagua profileImg"/>
+      <span class="dot-name">Benagua</span>
+    </a>
+    <a class="dot" href="#frame6" aria-label="Show Vida">
+      <img src="./appleSpace/Vida.png" alt="Sept CJ Vida profileImg"/>
+      <span class="dot-name">Vida</span>
+    </a>
+    <a class="dot" href="#frame7" aria-label="Show Gutierrez">
+      <img src="./appleSpace/Gutierrez.png" alt="Dharl Akhen Gutierrez profileImg"/>
+      <span class="dot-name">Gutierrez</span>
+    </a>
+  </nav>
+
 
 </body>
 </html>
